@@ -27,7 +27,6 @@ static_assertions = "1.1.0"
 
 # local dependencies
 pallet-template = { path = '../pallets/template', default-features = false, version = '3.0.0' }
-pallet-open-grant = { path = '../pallets/open-grant', default-features = false, version = '0.0.1' }
 sum-storage = { path = '../pallets/sum-storage', default-features = false, version = '2.0.0' }
 sum-storage-runtime-api = { path = '../pallets/sum-storage/runtime-api', default-features = false, version = '2.0.0' }
 
@@ -94,7 +93,6 @@ std = [
     'pallet-transaction-payment/std',
     'pallet-transaction-payment-rpc-runtime-api/std',
     'pallet-scheduler/std',
-    'pallet-open-grant/std',
     "sum-storage-runtime-api/std",
 	"sum-storage/std",
     "pallet-collective/std",

@@ -44,8 +44,6 @@ use pallet_transaction_payment::CurrencyAdapter;
 
 /// Import the template pallet.
 pub use pallet_template;
-/// Import the open-grant pallet.
-pub use pallet_open_grant;
 /// Import the sum_storage pallet.
 pub use sum_storage;
 
@@ -464,16 +462,6 @@ impl pallet_template::Config for Runtime {
 	type Event = Event;
 }
 
-parameter_types! {
-	pub const OpenGrantModuleId: ModuleId = ModuleId(*b"py/opgrd");
-}
-
-impl pallet_open_grant::Config for Runtime {
-	type ModuleId = OpenGrantModuleId;
-	type Event = Event;
-	type Currency = Balances;
-}
-
 impl sum_storage::Config for Runtime {
 	type Event = Event;
 }
@@ -503,7 +491,6 @@ construct_runtime!(
 		Sudo: pallet_sudo::{Module, Call, Config<T>, Storage, Event<T>},
 		// Include the custom logic from the template pallet in the runtime.
 		TemplateModule: pallet_template::{Module, Call, Storage, Event<T>},
-		OpenGrant: pallet_open_grant::{Module, Call, Storage, Event<T>},
 		SumStorage: sum_storage::{Module, Call, Storage, Event},
 	}
 );
